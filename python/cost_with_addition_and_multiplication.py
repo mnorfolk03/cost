@@ -67,7 +67,7 @@ def c(limit: int):
                     self.how = "C(%d + %d)" % (i, self.num - i)
 
         def __str__(self):
-            return "C_{+,*,-}(%d) = %d" % (self.num, self.cost)
+            return "C_{+,*}(%d) = %d" % (self.num, self.cost)
 
         def __repr__(self):
             return str(self)

@@ -61,7 +61,7 @@ def c(limit: int):
                     tempCost = costs[e1].cost + costs[e2].cost
                     if (self.cost > tempCost):
                         self.cost = tempCost
-                        self.how = ["%d ^ %d" % (e1, e2)]
+                        self.how = "C(%d ^ %d)" % (e1, e2)
 
             # addition
             for i in range(1, self.num // 2 + 1):  # [1, num/2]

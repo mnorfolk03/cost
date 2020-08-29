@@ -1,6 +1,7 @@
 # cost_with_minus_unbounded.py
 from math import ceil, sqrt
 
+
 # Calculates the cost of an integer using the operations {+, *, -}
 
 
@@ -41,13 +42,11 @@ def c(limit: int):
 
             self.factors = tuple(arr)
 
-
             # is it forced?
             if forced >= 0:
                 self.how = "defined"
                 self.cost = forced
                 return
-
 
             self.how = "undefined"
             self.cost = num + 1
@@ -79,8 +78,8 @@ def c(limit: int):
             updated = self.checkCostNoMinus()
 
             for minuend in range(self.num + 1, len(costs)):  # check - operator
-                subtrahend = minuend - self.num # C(num) = C(minuend - subtrahend)
-                potential_cost = costs[subtrahend].cost + costs[minuend].cost # C(minuend) + C(subtrahend)
+                subtrahend = minuend - self.num  # C(num) = C(minuend - subtrahend)
+                potential_cost = costs[subtrahend].cost + costs[minuend].cost  # C(minuend) + C(subtrahend)
                 if (potential_cost < self.cost):
                     self.cost = potential_cost
                     self.how = "C(%d - %d)" % (minuend, subtrahend)
@@ -109,4 +108,3 @@ def c(limit: int):
             break
 
     return tuple(costs)
-

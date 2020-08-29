@@ -48,8 +48,8 @@ def c(limit: int):
                 self.cost = forced
                 return
 
-            self.how = "undefined"
-            self.cost = num + 1
+            self.how = "C(%d)" % num
+            self.cost = num
 
             # multiplication
             for f1, f2 in self.factors[1:]:  # skip the first factor of (1, num)
